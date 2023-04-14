@@ -110,7 +110,7 @@ void onIdentifyRequest()
     messenger.sendCmdArg(switchStrobe);
     messenger.sendCmdArg(F("STROBE"));
     messenger.sendCmdArg(F("SWITCH3"));
-    messenger.sendCmdArg(F("0"));
+    messenger.sendCmdArg(F(""));
     messenger.sendCmdArg(F("POS_NAMES=OFF#ON#AUTO"));
     messenger.sendCmdEnd();
 
@@ -119,7 +119,7 @@ void onIdentifyRequest()
     messenger.sendCmdArg(switchBeacon);
     messenger.sendCmdArg(F("BEACON"));
     messenger.sendCmdArg(F("SWITCH"));
-    messenger.sendCmdArg(F("1"));
+    messenger.sendCmdArg(F(""));
     messenger.sendCmdEnd();
 
     messenger.sendCmdStart(kRequest);
@@ -127,7 +127,7 @@ void onIdentifyRequest()
     messenger.sendCmdArg(switchWing);
     messenger.sendCmdArg(F("WING"));
     messenger.sendCmdArg(F("SWITCH"));
-    messenger.sendCmdArg(F("1"));
+    messenger.sendCmdArg(F(""));
     messenger.sendCmdEnd();
 
     messenger.sendCmdStart(kRequest);
@@ -135,7 +135,7 @@ void onIdentifyRequest()
     messenger.sendCmdArg(switchNavLogo);
     messenger.sendCmdArg(F("NAV_LOGO"));
     messenger.sendCmdArg(F("SWITCH3"));
-    messenger.sendCmdArg(F("1"));
+    messenger.sendCmdArg(F(""));
     messenger.sendCmdArg(F("POS_NAMES=OFF#2#1"));
     messenger.sendCmdEnd();
 
@@ -144,7 +144,7 @@ void onIdentifyRequest()
     messenger.sendCmdArg(switchRunwayTurnoff);
     messenger.sendCmdArg(F("RWY_TURN_OFF"));
     messenger.sendCmdArg(F("SWITCH"));
-    messenger.sendCmdArg(F("1"));
+    messenger.sendCmdArg(F(""));
     messenger.sendCmdEnd();
 
     messenger.sendCmdStart(kRequest);
@@ -152,7 +152,7 @@ void onIdentifyRequest()
     messenger.sendCmdArg(switchLandingLeft);
     messenger.sendCmdArg(F("LANDING_LEFT"));
     messenger.sendCmdArg(F("SWITCH3"));
-    messenger.sendCmdArg(F("1"));
+    messenger.sendCmdArg(F(""));
     messenger.sendCmdArg(F("POS_NAMES=RETRACT#ON#OFF"));
     messenger.sendCmdEnd();
 
@@ -161,7 +161,7 @@ void onIdentifyRequest()
     messenger.sendCmdArg(switchLandingRight);
     messenger.sendCmdArg(F("LANDING_RIGHT"));
     messenger.sendCmdArg(F("SWITCH3"));
-    messenger.sendCmdArg(F("1"));
+    messenger.sendCmdArg(F(""));
     messenger.sendCmdArg(F("POS_NAMES=RETRACT#ON#OFF"));
     messenger.sendCmdEnd();
 
@@ -170,7 +170,7 @@ void onIdentifyRequest()
     messenger.sendCmdArg(switchNose);
     messenger.sendCmdArg(F("NOSE"));
     messenger.sendCmdArg(F("SWITCH3"));
-    messenger.sendCmdArg(F("1"));
+    messenger.sendCmdArg(F(""));
     messenger.sendCmdArg(F("POS_NAMES=OFF#TO#TAXI"));
     messenger.sendCmdEnd();
 
