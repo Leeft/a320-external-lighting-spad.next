@@ -179,7 +179,7 @@ void onIdentifyRequest()
     messenger.sendCmdStart(kRequest);
     messenger.sendCmdArg(F("OUTPUT"));
     messenger.sendCmdArg(ledBrightness);
-    messenger.sendCmdArg(F("L_PANEL_TINT"));  // Tag will become "SERIAL:<guid>/L_BRIGHTNESS"
+    messenger.sendCmdArg(F("L_PANEL_TINT"));
     messenger.sendCmdArg(F("LED")); // Type
     messenger.sendCmdArg(F("SPAD_LED_C")); // Custom defined colours (COLORSET=)
     messenger.sendCmdArg(F("UI_FACE=0"));
@@ -189,14 +189,14 @@ void onIdentifyRequest()
 
     // // Expose brightness setting
     // // 1,ADD,<CHANNELID>,<path>,<valuetype>,<access>,<name>[[,description][,options]];
-    // messenger.sendCmdStart(kCommand);
-    // messenger.sendCmdArg(F("ADD"));
-    // messenger.sendCmdArg(kBrightness);
-    // messenger.sendCmdArg(F("PanelBrightness"));  // Tag will become "SERIAL:<guid>/PanelBrightness"
-    // messenger.sendCmdArg(F("U8")); // valuetype
-    // messenger.sendCmdArg(F("RW"));
-    // messenger.sendCmdArg(F("Panel backlight brightness"));
-    // messenger.sendCmdEnd();
+    messenger.sendCmdStart(kCommand);
+    messenger.sendCmdArg(F("ADD"));
+    messenger.sendCmdArg(kBrightness);
+    messenger.sendCmdArg(F("PanelBrightness"));  // Tag will become "SERIAL:<guid>/PanelBrightness"
+    messenger.sendCmdArg(F("U8")); // valuetype
+    messenger.sendCmdArg(F("RW"));
+    messenger.sendCmdArg(F("Panel backlight brightness"));
+    messenger.sendCmdEnd();
 
     // tell SPAD.neXT we are done with config
     messenger.sendCmd(kRequest, F("CONFIG"));
@@ -307,6 +307,21 @@ void onData()
     }
 }
 
+void onBrightness()
+{
+    uint8_t brightness = messenger.readInt16Arg();
+    brightness += 15;
+    float factor = brightness / 115.0;
+    brightness = (float) factor * brightness;
+    if ( brightness < 15 ) {
+      // Never really turn it off by brightness alone (barely visible)
+      brightness = 15;
+    }
+    globalBrightness = brightness;
+    setPanelLighting( globalColor, brightness );
+}
+
+
 // Define callbacks for the different SPAD command sets
 void attachCommandCallbacks()
 {
@@ -315,6 +330,8 @@ void attachCommandCallbacks()
     messenger.attach(kEvent, onEvent);
     messenger.attach(kData, onData);
     messenger.attach(kLED, onLED);
+    messenger.attach(kBrightness, onBrightness);
+
 }
 
 // EOF
