@@ -1,0 +1,233 @@
+<Device xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VendorID="0xFFFF" ProductID="0x0006" DevicePath="SERIAL_COM6" Serial="COM6" DeviceIndex="0" Version="3" xmlns="http://www.fsgs.com/SPAD">
+  <DevicePage ID="72c73483-060e-4a22-94be-a6d0c6e32179" IsDefaultPage="true" Name="A32NX">
+    <Events>
+      <Event BoundTo="STROBE">
+        <EventDefinitions>
+          <EventDefinition Trigger="OFF" IsFinal="true">
+            <EventActions>
+              <EventActionChangeValue TargetDataDefinition="LVAR:LIGHTING_STROBE_0" Value="2" />
+            </EventActions>
+          </EventDefinition>
+          <EventDefinition Trigger="ON">
+            <EventActions>
+              <EventActionChangeValue TargetDataDefinition="LVAR:LIGHTING_STROBE_0" Value="0" />
+            </EventActions>
+          </EventDefinition>
+          <EventDefinition Trigger="AUTO">
+            <EventActions>
+              <EventActionChangeValue TargetDataDefinition="LVAR:LIGHTING_STROBE_0" Value="1" />
+            </EventActions>
+          </EventDefinition>
+        </EventDefinitions>
+      </Event>
+      <Event BoundTo="BEACON">
+        <EventDefinitions>
+          <EventDefinition Trigger="RELEASE">
+            <EventActions>
+              <EventActionChangeValue TargetDataDefinition="SIMCONNECT:LIGHT BEACON" Value="0" />
+            </EventActions>
+          </EventDefinition>
+          <EventDefinition Trigger="PRESS">
+            <EventActions>
+              <EventActionChangeValue TargetDataDefinition="SIMCONNECT:LIGHT BEACON" Value="1" />
+            </EventActions>
+          </EventDefinition>
+        </EventDefinitions>
+      </Event>
+      <Event BoundTo="WING">
+        <EventDefinitions>
+          <EventDefinition Trigger="RELEASE">
+            <EventActions>
+              <EventActionChangeValue TargetDataDefinition="SIMCONNECT:LIGHT WING" Value="0" />
+            </EventActions>
+          </EventDefinition>
+          <EventDefinition Trigger="PRESS">
+            <EventActions>
+              <EventActionChangeValue TargetDataDefinition="SIMCONNECT:LIGHT WING" Value="1" />
+            </EventActions>
+          </EventDefinition>
+        </EventDefinitions>
+      </Event>
+      <Event BoundTo="NAV_LOGO">
+        <EventDefinitions>
+          <EventDefinition Trigger="OFF">
+            <EventActions>
+              <EventActionChangeValue TargetDataDefinition="SIMCONNECT:LIGHT LOGO" Value="0" />
+            </EventActions>
+          </EventDefinition>
+          <EventDefinition Trigger="1">
+            <EventActions>
+              <EventActionChangeValue TargetDataDefinition="SIMCONNECT:LIGHT LOGO" Value="1" />
+            </EventActions>
+          </EventDefinition>
+          <EventDefinition Trigger="2">
+            <EventActions>
+              <EventActionChangeValue TargetDataDefinition="SIMCONNECT:LIGHT LOGO" Value="1" />
+            </EventActions>
+          </EventDefinition>
+        </EventDefinitions>
+      </Event>
+      <Event BoundTo="RWY_TURN_OFF">
+        <EventDefinitions>
+          <EventDefinition Trigger="RELEASE">
+            <EventActions>
+              <EventActionChangeValue TargetDataDefinition="MSFS:CIRCUIT SWITCH ON:21" Value="0" />
+            </EventActions>
+          </EventDefinition>
+          <EventDefinition Trigger="PRESS">
+            <EventActions>
+              <EventActionChangeValue TargetDataDefinition="MSFS:CIRCUIT SWITCH ON:21" Value="1" />
+            </EventActions>
+          </EventDefinition>
+        </EventDefinitions>
+      </Event>
+      <Event BoundTo="LANDING_LEFT">
+        <EventDefinitions>
+          <EventDefinition Trigger="RETRACT">
+            <EventActions>
+              <EventActionChangeValue TargetDataDefinition="LVAR:LANDING_2_RETRACTED" Value="1" />
+              <EventActionChangeValue TargetDataDefinition="LVAR:LIGHTING_LANDING_2" Value="2" />
+            </EventActions>
+          </EventDefinition>
+          <EventDefinition Trigger="ON">
+            <EventActions>
+              <EventActionChangeValue TargetDataDefinition="LVAR:LANDING_2_RETRACTED" Value="0" />
+              <EventActionChangeValue TargetDataDefinition="LVAR:LIGHTING_LANDING_2" Value="0" />
+            </EventActions>
+          </EventDefinition>
+          <EventDefinition Trigger="OFF">
+            <EventActions>
+              <EventActionChangeValue TargetDataDefinition="LVAR:LANDING_2_RETRACTED" Value="0" />
+              <EventActionChangeValue TargetDataDefinition="LVAR:LIGHTING_LANDING_2" Value="1" />
+            </EventActions>
+          </EventDefinition>
+        </EventDefinitions>
+      </Event>
+      <Event BoundTo="LANDING_RIGHT">
+        <EventDefinitions>
+          <EventDefinition Trigger="RETRACT">
+            <EventActions>
+              <EventActionChangeValue TargetDataDefinition="LVAR:LANDING_3_RETRACTED" Value="1" />
+              <EventActionChangeValue TargetDataDefinition="LVAR:LIGHTING_LANDING_3" Value="2" />
+            </EventActions>
+          </EventDefinition>
+          <EventDefinition Trigger="ON">
+            <EventActions>
+              <EventActionChangeValue TargetDataDefinition="LVAR:LANDING_3_RETRACTED" Value="0" />
+              <EventActionChangeValue TargetDataDefinition="LVAR:LIGHTING_LANDING_3" Value="0" />
+            </EventActions>
+          </EventDefinition>
+          <EventDefinition Trigger="OFF">
+            <EventActions>
+              <EventActionChangeValue TargetDataDefinition="LVAR:LANDING_3_RETRACTED" Value="0" />
+              <EventActionChangeValue TargetDataDefinition="LVAR:LIGHTING_LANDING_3" Value="1" />
+            </EventActions>
+          </EventDefinition>
+        </EventDefinitions>
+      </Event>
+      <Event BoundTo="NOSE">
+        <EventDefinitions>
+          <EventDefinition Trigger="OFF">
+            <EventActions>
+              <EventActionChangeValue TargetDataDefinition="MSFS:CIRCUIT SWITCH ON:17" Value="0" />
+              <EventActionChangeValue TargetDataDefinition="MSFS:CIRCUIT SWITCH ON:20" Value="0" />
+            </EventActions>
+          </EventDefinition>
+          <EventDefinition Trigger="TO">
+            <EventActions>
+              <EventActionChangeValue TargetDataDefinition="MSFS:CIRCUIT SWITCH ON:17" Value="1" />
+              <EventActionChangeValue TargetDataDefinition="MSFS:CIRCUIT SWITCH ON:20" Value="1" />
+            </EventActions>
+          </EventDefinition>
+          <EventDefinition Trigger="TAXI">
+            <EventActions>
+              <EventActionChangeValue TargetDataDefinition="MSFS:CIRCUIT SWITCH ON:17" Value="0" />
+              <EventActionChangeValue TargetDataDefinition="MSFS:CIRCUIT SWITCH ON:20" Value="1" />
+            </EventActions>
+          </EventDefinition>
+        </EventDefinitions>
+      </Event>
+      <Event BoundTo="L_PANEL_TINT">
+        <EventDefinitions>
+          <EventDefinition Trigger="VALUE" ConditionBinding="OR">
+            <EventConditions>
+              <EventCondition ConditionValueSource="LOCAL:UNKNOWN_AIRBUS EXTERNAL LIGHTING_DEVICE_POWER" ConditionComparator="Equals" ConditionTargetValue="0" />
+            </EventConditions>
+            <EventActions>
+              <EventActionLEDColor Color="OFF" />
+            </EventActions>
+          </EventDefinition>
+          <EventDefinition Trigger="VALUE">
+            <EventConditions>
+              <EventCondition ConditionValueSource="LOCAL:UNKNOWN_AIRBUS EXTERNAL LIGHTING_DEVICE_POWER" ConditionComparator="Equals" ConditionTargetValue="1" />
+            </EventConditions>
+            <EventActions>
+              <EventActionLEDColor Color="#FFA030" />
+            </EventActions>
+          </EventDefinition>
+          <EventDefinition Trigger="SCRIPT" IsFinal="true">
+            <EventConditions>
+              <EventCondition ConditionValueSource="MSFS:LIGHT POTENTIOMETER:86" ConditionComparator="Always" ConditionTargetValue="0" />
+            </EventConditions>
+            <EventActions>
+              <EventActionChangeValue TargetDataDefinition="LOCAL:UNKNOWN/AIRBUS EXTERNAL LIGHTING/COM6/PANELBRIGHTNESS" SourceType="Data" SourceDataDefinition="MSFS:LIGHT POTENTIOMETER:86">
+                <Options>
+                  <Option Key="HASMINMAX" Value="True" />
+                  <Option Key="VALUEMIN" Value="0" />
+                  <Option Key="VALUEMAX" Value="100" />
+                </Options>
+              </EventActionChangeValue>
+            </EventActions>
+            <Options>
+              <Option Key="HELD_FREQUENCY" Value="333" />
+            </Options>
+          </EventDefinition>
+          <EventDefinition Trigger="SCRIPT" IsFinal="true">
+            <EventConditions>
+              <EventCondition ConditionValueSource="LVAR:A32NX_ELEC_DC_1_BUS_IS_POWERED" ConditionComparator="Always" ConditionTargetValue="0" />
+              <EventCondition ConditionValueSource="LVAR:A32NX_ELEC_DC_1_BUS_IS_POWERED" ConditionComparator="Equals" ConditionTargetValue="0" />
+            </EventConditions>
+            <EventActions>
+              <EventActionLEDColor Color="OFF" />
+            </EventActions>
+          </EventDefinition>
+        </EventDefinitions>
+      </Event>
+    </Events>
+    <Extensions />
+  </DevicePage>
+  <Events>
+    <Event BoundTo="CONFIGURE_PANEL_STATUS">
+      <EventDefinitions>
+        <EventDefinition Trigger="VALUE" ConditionBinding="OR">
+          <EventConditions>
+            <EventCondition ConditionValueSource="MSFS:EXTERNAL POWER ON" ConditionComparator="Equals" ConditionTargetValue="1" />
+            <EventCondition ConditionValueSource="LVAR:A32NX_ELEC_DC_1_BUS_IS_POWERED" ConditionComparator="Equals" ConditionTargetValue="1" />
+            <EventCondition ConditionValueSource="LOCAL:GAMESTATE" ConditionComparator="Unequal" ConditionTargetValue="0" />
+          </EventConditions>
+          <EventActions>
+            <EventActionCommand CommandName="SPAD_neXt.Device_PowerON" />
+          </EventActions>
+        </EventDefinition>
+        <EventDefinition Trigger="VALUE">
+          <EventConditions>
+            <EventCondition ConditionValueSource="MSFS:EXTERNAL POWER ON" ConditionComparator="Equals" ConditionTargetValue="0" />
+            <EventCondition ConditionValueSource="LVAR:A32NX_ELEC_DC_1_BUS_IS_POWERED" ConditionComparator="Equals" ConditionTargetValue="0" />
+          </EventConditions>
+          <EventActions>
+            <EventActionCommand CommandName="SPAD_neXt.Device_PowerOFF" />
+          </EventActions>
+        </EventDefinition>
+        <EventDefinition Trigger="VALUE">
+          <EventConditions>
+            <EventCondition ConditionValueSource="LOCAL:GAMESTATE" ConditionComparator="Less" ConditionTargetValue="3" />
+          </EventConditions>
+          <EventActions>
+            <EventActionCommand CommandName="SPAD_neXt.Device_PowerOFF" />
+          </EventActions>
+        </EventDefinition>
+      </EventDefinitions>
+    </Event>
+  </Events>
+  <Extensions />
+</Device>
